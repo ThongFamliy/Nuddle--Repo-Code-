@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nuddle+</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <button class="tb-btn tb-menu" id="menu-btn" aria-label="Menu">
+    <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+      <path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/>
+    </svg>
+  </button>
+
+  <a class="brand" href="#">Nuddle<span class="brand-plus">+</span></a>
+  <span class="tb-divider"></span>
+  <span class="tb-title">Home</span>
+
+  <div class="tb-right">
+    <button class="tb-btn" id="search-btn" aria-label="Tìm kiếm">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+        <path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/>
+      </svg>
+    </button>
+    <button class="tb-btn" aria-label="Ứng dụng">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+        <path d="M4 4h4v4H4zM10 4h4v4h-4zM16 4h4v4h-4zM4 10h4v4H4zM10 10h4v4h-4zM16 10h4v4h-4zM4 16h4v4H4zM10 16h4v4h-4zM16 16h4v4h-4z"/>
+      </svg>
+    </button>
+    <button class="tb-btn" aria-label="Thông báo">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+        <path d="M12 22a2.2 2.2 0 0 0 2.2-2.2h-4.4A2.2 2.2 0 0 0 12 22zm6.4-6.2V11a6.4 6.4 0 0 0-4.9-6.2V4a1.5 1.5 0 0 0-3 0v.8A6.4 6.4 0 0 0 5.6 11v4.8L4 17.5v.9h16v-.9z"/>
+      </svg>
+    </button>
+    <div class="tb-account">
+      <button class="tb-avatar" id="account-btn" aria-label="Tài khoản của bạn">
+        <span class="avatar av-me" id="me-avatar">M</span>
+      </button>
+      <div class="account-menu" id="account-menu" hidden>
+        <p class="account-email" id="account-email">demo@nuddle.app</p>
+        <button class="account-action" id="avatar-btn">Đổi ảnh đại diện</button>
+        <button class="account-action" id="signout-btn">Đăng xuất</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="searchbar" id="searchbar" hidden>
+  <input type="search" id="search-input" placeholder="Tìm bài viết, hashtag, cộng đồng…" autocomplete="off">
+</div>
+
+<div class="layout">
+  <aside class="sidebar">
+    <nav>
+      <a class="nav-item active" href="#" data-nav="home">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 8h-3v9h-5v-6h-2v6H6v-9H3z"/></svg>
+        Home
+      </a>
+      <a class="nav-item" href="#" data-nav="collections">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l5 5-5 5-5-5zM5 11l4 4-4 4-4-4zM19 11l4 4-4 4-4-4z"/></svg>
+        Collections
+      </a>
+      <a class="nav-item" href="#" data-nav="communities">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 2.2a7.8 7.8 0 0 1 5.6 2.4 7.7 7.7 0 0 1 2.2 5.4 7.8 7.8 0 0 1-7.8 7.8A7.8 7.8 0 0 1 4.2 12 7.8 7.8 0 0 1 12 4.2z"/></svg>
+        Communities
+      </a>
+      <a class="nav-item" href="#" data-nav="circles">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9zm6.5 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zM9 14c-3 0-5.5 1.5-5.5 3.2V20h11v-2.8C14.5 15.5 12 14 9 14zm7.2.6c-.6 0-1.2.1-1.7.2 1 .9 1.6 2 1.6 3.2v2H21v-2.2c0-1.7-2.1-3.2-4.8-3.2z"/></svg>
+        Circles
+      </a>
+      <a class="nav-item" href="#" data-nav="profile">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 4a3.2 3.2 0 1 1 0 6.4A3.2 3.2 0 0 1 12 6zm0 13.6a7.6 7.6 0 0 1-5.8-2.7c.1-1.9 3.9-3 5.8-3s5.7 1.1 5.8 3A7.6 7.6 0 0 1 12 19.6z"/></svg>
+        Profile
+      </a>
+      <a class="nav-item" href="#" data-nav="people">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm7.5 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM9 13c-3.3 0-6 1.6-6 3.5V19h12v-2.5C15 14.6 12.3 13 9 13zm7.5.6c-.9 0-1.7.1-2.4.3 1.2 1 1.9 2.2 1.9 3.6V19H22v-2.2c0-1.7-2.4-3.2-5.5-3.2z"/></svg>
+        People
+      </a>
+      <div class="nav-sep"></div>
+      <a class="nav-item" href="#" data-nav="settings">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.4 13a7.6 7.6 0 0 0 0-2l2.1-1.6-2-3.4-2.5 1a7.4 7.4 0 0 0-1.7-1L15 3H11l-.3 2.6a7.4 7.4 0 0 0-1.7 1l-2.5-1-2 3.4L6.6 11a7.6 7.6 0 0 0 0 2l-2.1 1.6 2 3.4 2.5-1a7.4 7.4 0 0 0 1.7 1L11 21h4l.3-2.6a7.4 7.4 0 0 0 1.7-1l2.5 1 2-3.4zM13 15.5A3.5 3.5 0 1 1 16.5 12 3.5 3.5 0 0 1 13 15.5z"/></svg>
+        Settings
+      </a>
+      <a class="nav-item" href="#" data-nav="feedback">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4zm2 2v12h12V6zM8 9h8v2H8zm0 4h5v2H8z"/></svg>
+        Send Feedback
+      </a>
+      <div class="nav-sep"></div>
+      <a class="nav-item" href="#" data-nav="help">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm.9 15.3h-1.8v-1.9h1.8zM14 10.6c-.8.8-1 1.2-1 2.2h-1.7c0-1.5.5-2.1 1.4-3 .7-.7 1-1.1 1-1.9A1.9 1.9 0 0 0 9.8 8l-1.4-1a3.7 3.7 0 0 1 7.2 1.1c0 1.3-.6 1.9-1.6 2.5z"/></svg>
+        Help
+      </a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Maps Terms</a></p>
+      <p class="copyright">© 2026 Nuddle</p>
+    </div>
+  </aside>
+
+  <main class="stream">
+    <p class="banner" id="banner" hidden>
+      Chế độ demo: dữ liệu chỉ nằm trong trình duyệt này. Điền <b>Project URL</b> và <b>anon key</b> vào
+      <code>files/config.js</code> rồi tải lại trang để nối Supabase.
+    </p>
+
+    <section class="card composer">
+      <div class="composer-row">
+        <button class="composer-avatar-btn" id="composer-avatar-btn" type="button" aria-label="Đổi ảnh đại diện">
+          <span class="avatar av-me" id="composer-avatar">M</span>
+        </button>
+        <input id="composer-input" class="composer-input" type="text" placeholder="Có gì mới với bạn?" autocomplete="off">
+        <button class="circle-btn" id="photo-btn" type="button" aria-label="Chụp ảnh hoặc thêm ảnh vào bài">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 3l-1.7 2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.3L15 3zm3 5a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>
+        </button>
+      </div>
+
+      <div class="composer-photo" id="composer-photo" hidden>
+        <img id="composer-photo-img" alt="Ảnh sẽ đăng cùng bài viết">
+        <button class="composer-photo-remove" id="composer-photo-remove" type="button" aria-label="Bỏ ảnh">✕</button>
+      </div>
+
+      <div class="composer-foot" id="composer-foot" hidden>
+        <button class="post-submit" id="post-submit" type="button">Đăng</button>
+      </div>
+    </section>
+
+    <div id="feed"><p class="loading">Đang tải bảng tin…</p></div>
+    <p id="empty" class="empty" hidden>Không có bài viết nào khớp với tìm kiếm.</p>
+
+    <section class="circles-view" id="circles-view" hidden>
+      <div class="card circles-head">
+        <h2 class="circles-title">Circles</h2>
+        <p class="circles-sub">Gom bạn bè, gia đình, đồng nghiệp vào từng vòng tròn riêng. Chỉ mình bạn nhìn thấy các vòng này.</p>
+        <form class="circles-create" id="circle-form">
+          <input class="circles-input" id="circle-name" type="text" placeholder="Tên vòng tròn, ví dụ: Gia đình" maxlength="60" autocomplete="off">
+          <button class="circles-add-btn" type="submit">Tạo vòng</button>
+        </form>
+      </div>
+
+      <div id="circles-list"></div>
+      <p class="empty" id="circles-empty" hidden>Bạn chưa có vòng tròn nào. Đặt tên rồi bấm “Tạo vòng” nhé.</p>
+    </section>
+  </main>
+</div>
+
+<button class="fab" id="fab" aria-label="Viết bài mới">
+  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 17.2V21h3.8L17 10.8l-3.8-3.8zm17.7-10.5a1 1 0 0 0 0-1.4l-2-2a1 1 0 0 0-1.4 0l-1.6 1.6 3.8 3.8z"/></svg>
+</button>
+
+<div class="auth-overlay" id="auth-overlay" hidden>
+  <form class="auth-card" id="auth-form" novalidate>
+    <h1 class="auth-brand">Nuddle<span>+</span></h1>
+    <p class="auth-sub" id="auth-sub">Đăng nhập để xem bảng tin của bạn</p>
+
+    <div class="auth-avatar" id="auth-avatar-wrap" hidden>
+      <button class="auth-avatar-btn" id="auth-avatar-btn" type="button" aria-label="Chọn ảnh đại diện">
+        <img id="auth-avatar-img" src="avatar-placeholder.svg" alt="Ảnh đại diện">
+        <span class="auth-avatar-plus" aria-hidden="true">+</span>
+      </button>
+      <div class="auth-avatar-text">
+        <p class="auth-avatar-title">Ảnh đại diện</p>
+        <p class="auth-avatar-hint" id="auth-avatar-hint">Bấm để chụp hoặc chọn ảnh từ máy</p>
+      </div>
+    </div>
+
+    <input class="auth-input" id="auth-email" type="email" placeholder="Email" autocomplete="email" required>
+    <input class="auth-input" id="auth-password" type="password" placeholder="Mật khẩu (ít nhất 6 ký tự)" autocomplete="current-password" minlength="6" required>
+
+    <p class="auth-error" id="auth-error" hidden></p>
+
+    <button class="auth-submit" id="auth-submit" type="submit">Đăng nhập</button>
+    <button class="auth-switch" id="auth-switch" type="button">Chưa có tài khoản? Tạo mới</button>
+  </form>
+</div>
+
+<div class="camera-overlay" id="camera-overlay" hidden>
+  <div class="camera-card">
+    <div class="camera-head">
+      <h2 id="camera-title">Chụp ảnh</h2>
+      <button class="camera-close" id="camera-close" type="button" aria-label="Đóng">✕</button>
+    </div>
+
+    <video id="camera-video" class="camera-video" playsinline autoplay muted></video>
+    <img id="camera-preview" class="camera-preview" alt="Ảnh vừa chọn" hidden>
+    <canvas id="camera-canvas" hidden></canvas>
+
+    <p class="camera-note" id="camera-note" hidden></p>
+
+    <div class="camera-actions">
+      <button class="camera-btn primary" id="camera-shot" type="button">Chụp ảnh</button>
+      <button class="camera-btn" id="camera-retake" type="button" hidden>Chụp lại</button>
+      <button class="camera-btn primary" id="camera-use" type="button" hidden>Dùng ảnh này</button>
+      <button class="camera-btn" id="camera-pick" type="button">Chọn ảnh từ máy</button>
+    </div>
+  </div>
+</div>
+
+<input type="file" id="camera-file" accept="image/*" hidden>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
